@@ -36,7 +36,7 @@ func main() {
 	// #4: structs are copied
 	// song1 = song2
 
-	// #3: structs can be compared
+	// #3:structs can be compared
 	if song1 == song2 {
 		// #2: struct comparison works like this
 		// if song1.title == song2.title &&
@@ -56,7 +56,7 @@ func main() {
 	// #7: a struct can include another struct
 	rock := playlist{
 		genre: "indie rock",
-		songs: songs,
+		songs: songs, // cant compare nested structs, need to define ==
 	}
 
 	// #9: you can't compare struct values that contains incomparable fields

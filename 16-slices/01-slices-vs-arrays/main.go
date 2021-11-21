@@ -24,6 +24,8 @@ func main() {
 
 		fmt.Printf("len(nums) : %d\n", len(nums))
 
+		_ = [5]int{} == [...]int{0, 0, 0, 0, 0}
+
 		// won't work: the slice is nil.
 		// fmt.Printf("nums[0]: %d\n", nums[0])
 		// fmt.Printf("nums[1]: %d\n", nums[1])

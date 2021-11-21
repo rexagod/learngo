@@ -30,7 +30,8 @@ func main() {
 	// #2: Map retrieval is O(1) — on average.
 	key := "good"
 
-	value := dict[key]
+	value, ok := dict[key]
+	print(ok)
 	fmt.Printf("%q means %#v\n", key, value)
 
 	// #1B

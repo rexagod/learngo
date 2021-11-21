@@ -10,6 +10,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
@@ -34,6 +36,22 @@ func main() {
 		title string
 	}
 
+	// https://stackoverflow.com/a/45189658
+	// type Foo struct {
+	// 	name string
+	// 	num  int
+	// }
+
+	// type Bar struct {
+	// 	Foo Foo
+	// }
+
+	// bar := Bar{Foo: Foo{name: "kramer", num: 123}}
+	// // bar := Bar{}
+	// // bar.name = "foo"
+	// // bar.num = 1
+	// spew.Dump(bar)
+
 	// #2: print a book
 	// moby := book{title: "moby dick", words: 206052, isbn: "102030"}
 	// fmt.Printf("%s has %d words (isbn: %s)\n", moby.title, moby.words, moby.isbn)
@@ -42,10 +60,10 @@ func main() {
 	moby := book{
 		// #5c: type the field in a new field
 		// title: "conflict",
-		text: text{title: "moby dick", words: 206052},
 		isbn: "102030",
 	}
 
+	moby.title = "Moby dick"
 	moby.text.words = 1000
 	moby.words++
 
@@ -56,12 +74,12 @@ func main() {
 		moby.isbn)
 
 	// #3c: print the book
-	// fmt.Printf("%s has %d words (isbn: %s)\n",
-	// 	moby.text.title, moby.text.words, moby.isbn)
+	fmt.Printf("%s has %d words (isbn: %s)\n",
+		moby.text.title, moby.text.words, moby.isbn)
 
 	// #5b: print the conflict
 	fmt.Printf("%#v\n", moby)
 
 	// go get -u github.com/davecgh/go-spew/spew
-	// spew.Dump(moby)
+	spew.Dump(moby)
 }

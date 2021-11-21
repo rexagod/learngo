@@ -30,7 +30,7 @@ func main() {
 		Age      int
 	}
 
-	person1 := Person{Name: "Pablo", Lastname: "Picasso", Age: 91}
+	person1 := Person{"Pablo", "Picasso", 91}
 	person2 := Person{Name: "Sigmund", Lastname: "Freud", Age: 83}
 
 	fmt.Printf("person1: %+v\n", person1)

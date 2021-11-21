@@ -14,6 +14,7 @@ import (
 	s "github.com/inancgumus/prettyslice"
 )
 
+// https://stackoverflow.com/a/41668362
 func main() {
 	s.MaxPerLine = 6
 	s.PrintBacking = true

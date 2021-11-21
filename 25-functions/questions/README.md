@@ -117,12 +117,13 @@ func incrAll(stats map[int]int) {
 1. No, it doesn't work: Go is a pass by value language. `incrAll` cannot update the map value.
 2. Yes, it works: `incrAll` can update the map value. *CORRECT*
 
-> **2:** Map values are pointers. So, `incrAll` can update the map value.
+> **2:**  Map values are pointers. So, `incrAll` can update the map value.
 
 
 ## Does the following code work? If so, why?
 IT SHOULD PRINT: [10 5 2]
 ```go
+
 func main() {
     stats := []int{10, 5}
     add(stats, 2)

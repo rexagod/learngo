@@ -20,11 +20,9 @@ func main() {
 
 // EXERCISE: Remove the comments from the below function
 //           And analyze the error message
-
-// func bye() {
-// 	fmt.Println("Bye!")
-// }
-
+	// func bye() {
+	// fmt.Println("Bye!")
+	// }
 // ***** EXPLANATION *****
 //
 // ERROR: "bye" function "redeclared"

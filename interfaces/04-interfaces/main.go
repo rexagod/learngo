@@ -28,7 +28,7 @@ func main() {
 	store = append(store, &minecraft, &tetris, mobydick, rubik)
 	store.print()
 
-	// interface values are comparable
+	//  interface values are comparable
 	fmt.Println(store[0] == &minecraft)
 	fmt.Println(store[3] == rubik)
 }

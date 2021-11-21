@@ -16,28 +16,33 @@ import "fmt"
 
 func main() {
 	type (
-		// integer int
+		integer int
 
 		bookcase [5]int
-		cabinet  [5]int
+		cabinet  [5]integer
 		//          ^- try changing this to: integer
 		//             but first: uncomment the integer type above
 	)
 
 	blue := bookcase{6, 9, 3, 2, 1}
-	red := cabinet{6, 9, 3, 2, 1}
+	// red := cabinet{6, 9, 3, 2, 1}
 
 	fmt.Print("Are they equal? ")
 
-	if cabinet(blue) == red {
-		fmt.Println("✅")
-	} else {
-		fmt.Println("❌")
-	}
+	//   [5]integer's underlying type: [5]integer
+	//   [5]int's underlying type    : [5]int
+	//	 not same as integer and int
+
+	// if [5]int(blue) == [5]integer(red) {
+	// 	fmt.Println("✅")
+	// } else {
+	// 	fmt.Println("❌")
+	// }
 
 	fmt.Printf("blue: %#v\n", blue)
-	fmt.Printf("red : %#v\n", bookcase(red))
+	// fmt.Printf("red : %#v\n", bookcase(red))
 
+	// [5]int and [4]int are different types.
 	// ------------------------------------------------
 	// The underlying type of an unnamed type is itself.
 	//
@@ -48,7 +53,10 @@ func main() {
 	//   > Their memory layout is not important.
 	//   > Their types are not the same.
 
-	// _ = [5]integer{} == [5]int{}
+	type i int
+	_ = i(5) == int(5)
+
+	_ = int(integer(5)) == int(5)
 
 	// ------------------------------------------------
 	// An unnamed and a named type can be compared,
@@ -60,5 +68,5 @@ func main() {
 	// Note: Assuming the cabinet's type definition is like so:
 	//       type cabinet [5]integer
 
-	// _ = [5]integer{} == cabinet{}
+	_ = [5]integer{} == [5]integer(cabinet{})
 }

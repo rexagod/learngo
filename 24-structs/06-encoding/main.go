@@ -16,8 +16,9 @@ import (
 type permissions map[string]bool // #3
 
 type user struct { // #1
-	Name        string      `json:"username"`
-	Password    string      `json:"-"`
+	Name     string `json:"username"`
+	Password string `json:"-"`
+	// embedded fields are marshal-able
 	Permissions permissions `json:"perms,omitempty"` // #6
 
 	// name        string // #1

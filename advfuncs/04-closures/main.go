@@ -26,9 +26,6 @@ func main() {
 	fmt.Println("\n••• CLOSURES •••")
 
 	var min int
-	greaterThan := func(n int) bool {
-		return n > min
-	}
 
 	min = 3
 	fmt.Printf("> 3        : %d\n", filter(greaterThan, nums...))
@@ -48,9 +45,10 @@ func main() {
 		current := i
 
 		filterers = append(filterers, func(n int) bool {
-			min = current
-			return greaterThan(n)
-		})
+			minh := current
+			return func(n int) bool {
+		return n > minh
+	}		})
 	}
 
 	printer(filterers, nums...)

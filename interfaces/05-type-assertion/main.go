@@ -25,8 +25,8 @@ func main() {
 	store.print()
 
 	// #1
-	// var p printer
-	// p = &tetris
-	// tetris.discount(.5)
-	// p.print()
+	var p printer
+	p = &tetris
+	tetris.discount(.5)
+	p.print()
 }

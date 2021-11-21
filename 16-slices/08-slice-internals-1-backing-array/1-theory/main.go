@@ -32,14 +32,17 @@ func main() {
 	// let's create a new scope
 	// 'cause I'm going to use variables with the same name
 	{
+
 		// ages and agesArray have the same backing arrays
 		agesArray := [3]int{35, 15, 25}
 		ages := agesArray[0:3]
 
 		ages[0] = 100
 		ages[2] = 50
-
+		x := ages[1:]
+		x[0] = 1
 		s.Show("agesArray", agesArray[:])
 		s.Show("agesArray's ages", ages)
+		s.Show("", x)
 	}
 }

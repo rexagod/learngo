@@ -26,6 +26,9 @@ func main() {
 	// backing array.
 	//
 
+	type i = int
+	_ = int(5) == i(5)
+
 	ages := []int{35, 15, 25}
 	red, green := ages[0:1], ages[1:3]
 
